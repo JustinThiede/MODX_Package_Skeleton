@@ -1,34 +1,32 @@
 <?php
 
-$menus = array();
+$menus = [];
 
 $action= $modx->newObject('modAction');
-$action->fromArray(array(
+$action->fromArray([
   'id' => 1,
   'namespace' => NAMESPACE_NAME,
   'parent' => 0,
   'controller' => 'controllers/mgr/index',
   'haslayout' => true,
-  'lang_topics' => NAMESPACE_NAME.':default',
+  'lang_topics' => NAMESPACE_NAME . ':default',
   'assets' => '',
-),'',true,true);
+], '', true, true);
 
 $menu = $modx->newObject('modMenu');
-$menu->fromArray(array(
+$menu->fromArray([
   'text' => NAMESPACE_NAME,
   'parent' => 'components',
-  'description' => NAMESPACE_NAME.'.module_desc',
+  'description' => NAMESPACE_NAME . '.module_desc',
   'icon' => 'images/icons/plugin.gif',
   'menuindex' => 0,
   'params' => '',
   'handler' => '',
   'permissions'   => '',
   'namespace' => NAMESPACE_NAME,
-),'',true,true);
+], '', true, true);
 
 $menu->addOne($action);
-unset($action);
-
 $menus[] = $menu;
 
 return $menus;

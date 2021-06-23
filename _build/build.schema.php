@@ -11,10 +11,10 @@ $modx->initialize('mgr');
 $modx->loadClass('transport.modPackageBuilder', '', false, true);
 $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
-$sources = array(
+$sources = [
 	'model' => dirname(dirname(__FILE__)) . '/core/components/samplepackage/model/',
 	'schema_file' => dirname(dirname(__FILE__)) . '/core/components/samplepackage/model/schema/samplepackage.mysql.schema.xml'
-);
+];
 $manager = $modx->getManager();
 $generator = $manager->getGenerator();
 

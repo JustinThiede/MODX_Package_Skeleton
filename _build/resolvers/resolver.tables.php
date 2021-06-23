@@ -5,6 +5,7 @@ $packageNamespace = strtolower($packageName);
 set_time_limit(0);
 
 if (!function_exists('updateTableColumns')) {
+
     /**
      * @param modX $modx
      * @param string $table
@@ -47,6 +48,7 @@ if (!function_exists('updateTableColumns')) {
 }
 
 if (!function_exists('updateTableIndexes')) {
+
     /**
      * @param modX $modx
      * @param string $table
@@ -104,11 +106,11 @@ if ($object->xpdo) {
             /** @var modX $modx */
             $modx =& $object->xpdo;
 
-            $tables = array(
+            $tables = [
                 'SamplePackageObject',
-            );
+            ];
 
-            $modelPath = $modx->getOption($packageNamespace.'.core_path', null, $modx->getOption('core_path') . 'components/'.$packageNamespace.'/') . 'model/';
+            $modelPath = $modx->getOption($packageNamespace . '.core_path', null, $modx->getOption('core_path') . 'components/' . $packageNamespace . '/') . 'model/';
             $modx->addPackage($packageNamespace, $modelPath);
 
             // Create non existant tables
