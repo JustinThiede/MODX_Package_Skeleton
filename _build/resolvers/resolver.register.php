@@ -11,7 +11,7 @@ if ($object->xpdo) {
 			
 		case xPDOTransport::ACTION_UPGRADE:
 			if ($modx instanceof modX) {
-				$modx->addExtensionPackage($pkgName, '[[++core_path]]components/' . $pkgNameLower . '/model/', [
+				$modx->addExtensionPackage($pkgNameLower, '[[++core_path]]components/' . $pkgNameLower . '/model/', [
 					// 'serviceName' => $pkgName,
 					// 'serviceClass' => $pkgName,
 				]);
