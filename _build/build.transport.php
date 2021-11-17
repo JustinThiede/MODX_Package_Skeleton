@@ -36,7 +36,7 @@ $builder = new modPackageBuilder($modx);
 
 // Create Package
 $builder->createPackage(PKG_NAME_LOWER,PKG_VERSION,PKG_RELEASE);
-$builder->registerNamespace(PKG_NAME_LOWER, false, true, core_path . 'components/' . PKG_NAME_LOWER . '/');
+$builder->registerNamespace(PKG_NAME_LOWER, false, true, '{core_path}components/' . PKG_NAME_LOWER . '/');
 
 // Load lexicon
 # include_once $sources['builder_includes'] . 'lexicon.php';
